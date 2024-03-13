@@ -11,7 +11,7 @@ namespace truckwheels.Model
         [Key]
         public int Id { get; private set; }
         public string? Nome { get; private set; }
-        public  long Telefone { get; private set; }
+        public  long? Telefone { get; private set; }
 
         public string? Email { get; private set; }
         public string? Detalhes { get; private set; }

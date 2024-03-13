@@ -20,7 +20,7 @@ namespace truckwheels.Controllers
         {
             _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
         }
-
+        [Authorize]
         [HttpPost("add")] // Defina uma rota específica para a ação Add
         public IActionResult Add([FromForm]EmployeeViewModel employeeView)
         {
@@ -37,7 +37,7 @@ namespace truckwheels.Controllers
             _employeeRepository.Add(employee);
             return Ok();
         }
-
+        [Authorize]//proteje as rotas
         [HttpPost]
         [Route("{id}/download")]
 
@@ -49,7 +49,7 @@ namespace truckwheels.Controllers
 
             return File(dataBytes, "image/png");
         }
-
+        [Authorize]
         [HttpGet("get")] // Defina uma rota específica para a ação Get
         public IActionResult Get()
         {
